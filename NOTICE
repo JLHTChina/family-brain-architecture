@@ -1,0 +1,12 @@
+Family Brain Architecture (public edition)
+Copyright 2026 JLYTChina
+
+Code in this repository is licensed under the Apache License, Version 2.0.
+Documentation and diagrams are licensed under CC BY 4.0.
+
+This public edition contains architecture, patterns and safe examples only.
+It does not include deployment credentials, private inventory, personal data,
+school data, or the private source of truth.
+
+Third-party components, if any, remain under their respective licenses.
+See THIRD_PARTY_NOTICES for details when dependencies are added.

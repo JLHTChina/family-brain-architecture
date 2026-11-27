@@ -1,0 +1,43 @@
+schema: public-export/v1
+edition: family-brain-architecture-public
+source: private (not included)
+
+include:
+  - README.md
+  - LICENSE
+  - LICENSE-docs
+  - NOTICE
+  - CONTRIBUTING.md
+  - SECURITY.md
+  - .gitignore
+  - public_export.yaml
+  - docs/**
+
+exclude:
+  - assets.json
+  - .env
+  - .env.*
+  - secrets/**
+  - private/**
+  - logs/**
+  - inventory/**
+  - "**/*.key"
+  - "**/*.pem"
+  - "**/*.log"
+  - "**/*.jsonl"
+
+redact:
+  - IPv4 addresses
+  - MAC addresses
+  - serial numbers
+  - order IDs
+  - personal names and email addresses
+  - school and student data
+  - hostnames and internal paths
+
+review:
+  secret_scan: required
+  manual_review: required
+  license_check: required
+  fresh_history: true
+  bidirectional_sync: false
