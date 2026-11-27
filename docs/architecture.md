@@ -19,7 +19,7 @@ The architecture is hub-and-spoke. Nodes do not bypass the core's policy.
 
 ### Data plane
 
-```
+```text
 capture -> edge filter -> core -> memory -> artifact
 ```
 

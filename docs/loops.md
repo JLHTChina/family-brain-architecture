@@ -4,7 +4,7 @@ The architecture closes three loops. They are intentionally separate so that dat
 
 ## 1. Data loop
 
-```
+```text
 physical/edge capture
   -> typed event
   -> edge filter (VAD, keyframes, OCR, transcript, redaction)
@@ -22,7 +22,7 @@ Rules:
 
 ## 2. Logic loop
 
-```
+```text
 identity -> session lease -> task capsule -> policy
   -> routing -> execution -> validation -> delivery -> audit -> revoke
 ```

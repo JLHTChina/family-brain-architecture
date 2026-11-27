@@ -103,7 +103,7 @@ See [docs/security.md](docs/security.md).
 
 ## Repository layout
 
-```
+```text
 .
 ├── README.md
 ├── LICENSE              # Apache-2.0, code
