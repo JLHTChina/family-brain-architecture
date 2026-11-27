@@ -60,3 +60,50 @@ Untrusted content includes email, web pages, documents, images and transcripts. 
 ## 7. Compliance
 
 Implementations must add their own threat model, privacy review, consent model, data-processing agreements and applicable legal review. This document is not legal advice.
+
+## 8. Sole ownership and delegated authority
+
+- The human owner is the sole authority. The AI is never an owner, collaborator, organization admin, recovery principal or billing contact.
+- The AI receives scoped, revocable capabilities, not account ownership or standing credentials.
+- No shared accounts, shared passwords or shared MFA devices.
+- Automation that needs write access uses a least-privilege, repository-scoped deploy key or fine-grained token; no admin scope; no access to other repositories.
+- The owner reviews and merges changes. A bot may open a pull request, but it does not approve or merge its own change.
+- Recovery paths (hardware key, recovery codes, break-glass procedure) are held by the owner, offline and separate from the automation.
+
+## 9. Encryption and key hierarchy
+
+| Secret | Storage | Rule |
+|---|---|---|
+| Account 2FA | hardware security key/passkey + TOTP backup | never shared; recovery codes offline |
+| SSH key | local OS keychain/agent, passphrase-protected | public key only on GitHub; private key never in repo |
+| Commit signing key | SSH signing or GPG, passphrase-protected | public key on GitHub; verify before release |
+| Personal access token | secrets manager; fine-grained, expiring | no classic PAT; no repo commit; least privilege |
+| Service secrets | OS keychain/DPAPI, age/SOPS or secret manager | never in prompts, logs, screenshots or public repo |
+| Sensitive backups | encrypted container (age/VeraCrypt) | key stored separately; restore tested |
+
+- Encrypt in transit (HTTPS/SSH) and at rest (full-disk encryption on owner devices).
+- Do not store private keys, recovery codes or tokens in this public repository, issues, pull requests or CI logs.
+- Rotate tokens and keys on a schedule and immediately after suspected exposure.
+- Prefer short-lived credentials and OIDC over long-lived cloud keys.
+
+## 10. Threat model
+
+- Account takeover: phishing, password reuse, stolen session, SIM swap.
+- Supply chain: unpinned GitHub Actions, malicious dependencies, compromised maintainer.
+- Secret leakage: committed `.env`, logs, screenshots, issue attachments.
+- Malicious contribution: prompt injection in a PR, workflow injection, untrusted code execution.
+- Repository integrity: force push, branch deletion, tag rewriting.
+- Automation abuse: over-scoped token, prompt injection causing tool misuse.
+
+## 11. Incident response
+
+1. Revoke sessions, tokens, deploy keys and app authorizations.
+2. Rotate affected keys and secrets.
+3. Preserve audit logs and evidence.
+4. Inspect commits, releases, workflows and public exposure.
+5. Notify affected parties if personal data was exposed.
+6. Restore from a verified backup; verify signatures and checksums.
+7. Record the incident and update the threat model.
+
+See [github-hardening.md](github-hardening.md) for the concrete GitHub settings checklist.
+

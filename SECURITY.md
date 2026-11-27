@@ -18,12 +18,15 @@ Include:
 ## Security principles
 
 - Read-only by default; writes reversible by default; irreversible actions require human approval.
+- The owner is the sole authority; the AI is never an owner, admin or recovery principal.
 - The model does not hold root, SSH, ADB, cloud credentials or MFA secrets.
 - Tools are registered, schema-validated, allowlisted and audited.
 - Untrusted content is separated from the instruction context to reduce prompt injection.
 - No raw personal data, school data, company data or secrets in this repository.
 - No public RDP, no open inbound ports, no MFA bypass.
 - Kill switch and audit trail are mandatory for any implementation.
+
+See [docs/github-hardening.md](docs/github-hardening.md) for the concrete account, repository, signing and Actions checklist.
 
 ## Supported versions
 

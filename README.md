@@ -118,12 +118,14 @@ See [docs/security.md](docs/security.md).
 │   ├── CODEOWNERS
 │   ├── PULL_REQUEST_TEMPLATE.md
 │   ├── ISSUE_TEMPLATE/
+│   ├── dependabot.yml
 │   └── workflows/validate.yml
 └── docs/
     ├── architecture.md
     ├── loops.md
     ├── roles.md
     ├── security.md
+    ├── github-hardening.md
     └── publishing.md
 ```
 
