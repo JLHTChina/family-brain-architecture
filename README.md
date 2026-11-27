@@ -109,13 +109,22 @@ See [docs/security.md](docs/security.md).
 ├── LICENSE              # Apache-2.0, code
 ├── LICENSE-docs         # CC BY 4.0, documentation and diagrams
 ├── NOTICE
+├── CHANGELOG.md
+├── CITATION.cff
 ├── CONTRIBUTING.md
 ├── SECURITY.md
 ├── public_export.yaml   # allowlist / redaction manifest for the public edition
+├── .github/
+│   ├── CODEOWNERS
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   ├── ISSUE_TEMPLATE/
+│   └── workflows/validate.yml
 └── docs/
     ├── architecture.md
     ├── loops.md
-    └── security.md
+    ├── roles.md
+    ├── security.md
+    └── publishing.md
 ```
 
 ## Status

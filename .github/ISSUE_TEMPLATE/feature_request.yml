@@ -1,0 +1,45 @@
+name: Feature request
+description: Propose an architecture, policy or documentation improvement.
+title: "[feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include secrets, personal data, school data or private deployment details.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should change?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+    validations:
+      required: false
+  - type: textarea
+    id: safety
+    attributes:
+      label: Security and privacy impact
+      description: Permissions, data boundary, approvals, failure modes.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have removed secrets and personal data.
+          required: true
+        - label: I have considered the permission level (L0-L3).
+          required: true
