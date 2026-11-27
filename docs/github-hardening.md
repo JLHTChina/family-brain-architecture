@@ -33,7 +33,6 @@ Do not lock yourself out:
 - Test in a private browser window before signing out other devices.
 - Do not remove the existing SSH key until the new key has been tested.
 
-
 ## 1. Account
 
 - [ ] Personal account; no shared login.

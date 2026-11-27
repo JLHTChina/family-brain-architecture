@@ -27,7 +27,7 @@ This architecture treats the system as a **hub-and-spoke organism**, not a singl
 ## Layers
 
 | Layer | Typical node | Responsibility |
-|---|---|---|
+| --- | --- | --- |
 | Terminal | phone, tablet, TV, browser | intent, display, approval |
 | Mobile edge | portable cloud desktop | session carrier, Windows tools, relay |
 | Home core | always-on mini PC | orchestration, policy, routing, audit |
@@ -86,7 +86,7 @@ See [docs/loops.md](docs/loops.md) for details.
 ## Permission model
 
 | Level | Examples | Policy |
-|---|---|---|
+| --- | --- | --- |
 | L0 read-only | status, documents, inventory read | allowed by default, audited |
 | L1 reversible write | reports, uploads, notifications, jobs | automatic with audit and undo |
 | L2 irreversible | delete, send message, pay, network change | human approval, second confirmation, rollback plan |

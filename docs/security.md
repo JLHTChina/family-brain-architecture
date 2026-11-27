@@ -3,7 +3,7 @@
 ## 1. Permission levels
 
 | Level | Examples | Policy |
-|---|---|---|
+| --- | --- | --- |
 | L0 Read-only | status, documents, inventory read | allowed by default, audited |
 | L1 Reversible write | reports, uploads, notifications, jobs | automatic with audit and undo |
 | L2 Irreversible | delete, send message, pay, network change | human approval, second confirmation, rollback plan |
@@ -73,7 +73,7 @@ Implementations must add their own threat model, privacy review, consent model, 
 ## 9. Encryption and key hierarchy
 
 | Secret | Storage | Rule |
-|---|---|---|
+| --- | --- | --- |
 | Account 2FA | hardware security key/passkey + TOTP backup | never shared; recovery codes offline |
 | SSH key | local OS keychain/agent, passphrase-protected | public key only on GitHub; private key never in repo |
 | Commit signing key | SSH signing or GPG, passphrase-protected | public key on GitHub; verify before release |
@@ -106,4 +106,3 @@ Implementations must add their own threat model, privacy review, consent model, 
 7. Record the incident and update the threat model.
 
 See [github-hardening.md](github-hardening.md) for the concrete GitHub settings checklist.
-
