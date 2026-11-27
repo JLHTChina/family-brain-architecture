@@ -2,6 +2,38 @@
 
 This checklist is for the owner of the public repository. It is intentionally conservative: the human owner is the sole authority; automation gets scoped, revocable capabilities only.
 
+## 0. Scope: GitHub only
+
+These steps are scoped to the GitHub account and this repository. They do **not** change:
+
+- Windows/macOS login, Windows Hello, or device passwords;
+- VPN, proxy, DNS, hosts file, or network routes;
+- router, AP, NAS, PC firewall, or UPS;
+- global Git configuration (`git config --global`);
+- other repositories or other accounts.
+
+VPN coexistence:
+
+- GitHub 2FA/passkey works over a VPN; it does not require changing the VPN.
+- If the VPN changes your apparent location, GitHub may ask for an extra verification; use email/TOTP/recovery, do not bypass it.
+- If SSH port 22 is blocked by the VPN or network, use GitHub's SSH-over-443 endpoint (`ssh.github.com:443`) in `~/.ssh/config`; do not change the VPN.
+- If Git over SSH is blocked entirely, use HTTPS with a credential manager or a fine-grained token for this repository only.
+
+Commit signing:
+
+- Configure signing with `git config --local`, inside this repository only.
+- Do not use `git config --global`; other repositories keep their current behavior.
+- If signing fails, it affects only this repository; disable it locally and fix before pushing.
+
+Do not lock yourself out:
+
+- Enable 2FA while your current session is active.
+- Save recovery codes offline before finishing.
+- Keep a TOTP backup in addition to a hardware key/passkey.
+- Test in a private browser window before signing out other devices.
+- Do not remove the existing SSH key until the new key has been tested.
+
+
 ## 1. Account
 
 - [ ] Personal account; no shared login.
