@@ -94,3 +94,28 @@ Do not lock yourself out:
 - [ ] Audit log reviewed periodically.
 - [ ] Backup of the private source of truth is encrypted and restore-tested.
 - [ ] Incident response steps are documented and reachable offline.
+
+## 7. Status snapshot (2026-11-27)
+
+Implemented:
+
+- Ruleset on `main`: pull request, required `markdown` and `secrets` checks, up-to-date branches, signed commits, linear history, blocked force pushes and deletions; no bypass actors.
+- Account: passkey primary, authenticator app available, verified email, email privacy enabled.
+- Repository security: private vulnerability reporting, security policy, security advisories, Dependabot alerts and security updates, malware alerts, secret scanning and push protection.
+- Actions: read-only workflow token, GitHub-owned actions only, full-length SHA pinning, no workflow-created or approved PRs.
+- Access: no collaborators, deploy keys, webhooks, Actions/Dependabot secrets, environments or personal access tokens.
+- Signing: SSH signing key registered on GitHub, repository-local SSH signing configured, signed test commit verified.
+- DCO: web-based commit sign-off enabled; pull request commits are checked in CI.
+
+Not yet verified by the owner:
+
+- Recovery codes stored offline in two places.
+- Two-factor authentication on the primary email account.
+- Encrypted backup restore test.
+- Scheduled key/token rotation.
+
+Exceptions:
+
+- CodeQL is not enabled because this repository is documentation and workflow configuration only.
+- There is no authentication SSH key; the repository uses HTTPS with Git Credential Manager. Add one only if SSH transport is adopted.
+- No tag ruleset exists yet; add one before publishing releases.

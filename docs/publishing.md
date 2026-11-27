@@ -18,16 +18,16 @@ This repository is a sanitized public edition. The private deployment and source
 3. Strip image metadata.
 4. Review diagrams and screenshots.
 5. Run `public_export.yaml` checks.
-6. Commit with a sign-off.
+6. Commit with a DCO sign-off and a verified signature.
 7. Push to the public repository only after human approval.
 
 ## 3. Repository settings
 
-- Enable branch protection for `main`.
-- Require pull requests and status checks.
-- Require signed-off commits.
+- Configure a ruleset for `main`.
+- Require pull requests, status checks and up-to-date branches.
+- Require signed commits and DCO sign-off for web-based commits.
 - Restrict force pushes and deletions.
-- Enable secret scanning and Dependabot alerts.
+- Enable secret scanning, push protection and Dependabot alerts.
 - Add a security policy and private vulnerability reporting.
 - Add issue and PR templates.
 

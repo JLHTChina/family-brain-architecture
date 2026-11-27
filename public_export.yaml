@@ -9,8 +9,13 @@ include:
   - NOTICE
   - CONTRIBUTING.md
   - SECURITY.md
+  - CHANGELOG.md
+  - CITATION.cff
+  - .gitattributes
   - .gitignore
+  - .markdownlint.json
   - public_export.yaml
+  - .github/**
   - docs/**
 
 exclude:
